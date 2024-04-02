@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<style>
+    .main {
+        background-color: lightcyan;
+        width: max-content;
+    }
+    .top{
+        font-family: sans-serif;
+        margin-top: 30px;
+    }
+    .sam{
+        font-family: sans-serif;
+        ;
+    }
+    .sam input{
+   width: 100px;
+    }
+    #but1 {
+        margin-left: 300px;
+        width: 250px;
+        text-align: center;
+        margin-top: 50px;
+    }
+</style>
+
+<body>
+    <div class="container main">
+        <div class="row">
+            <div class="col-md-4 col-lg-4 " >
+                <label class="top">Name</label>
+                <input type="text" id="name1">
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <label class="top">Batch</label>
+                <input type="text" id="batch">
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <label class="top">ID</label>
+                <input type="text" id="iden">
+            </div>
+
+           <br><br>
+            <div class="col-md-6 col-lg-6 sam">
+                <label>English</label>
+                <input type="text" id="n1">
+            </div>
+
+            <div class="col-md-6 col-lg-6 sam">
+                <label>Urdu</label>
+                <input type="text" id="n2">
+            </div>
+
+            <div class="col-md-6 col-lg-6 sam">
+                <label>Accounting</label>
+                <input type="text" id="n3">
+            </div>
+
+            <div class="col-md-6 col-lg-6 sam">
+                <label>Geography</label>
+                <input type="text" id="n4">
+            </div>
+
+            <div class="col-md-6 col-lg-6 sam">
+                <label>Banking</label>
+                <input type="text" id="n5">
+            </div>
+
+            <div class="col-md-6 col-lg-6 sam">
+                <label>Statics</label>
+                <input type="text" id="n6">
+            </div>
+
+            <div class="col-md-6 col-lg-6 sam">
+                <label>PST</label>
+                <input type="text" id="n7" >
+            </div> <br>
+
+            
+            <div class="col-md-6 col-lg-6">
+                <a name="" onclick="check()" id="but1" class="btn btn-primary" href="#" role="button">Check Result</a>
+            
+        </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h4>Mark Sheet</h4>
+        
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>name</th>
+                    <th>batch </th>
+                    <th>Student id</th>
+                    <th>total Mark</th>
+                    <th>Obtain mark</th>
+                    <th>Percentage</th>
+                    <th>Grade</th>
+                    <th>status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="name2" scope="row"></td>
+                    <td id="batch2"></td>
+                    <td id="id2"> </td>
+                    <td id="tot2"></td>
+                    <td id="obt2"></td>
+                    <td id="per2"></td>
+                    <td id="grade"></td>
+                    <td id="status"></td>
+                </tr>
+                <tr>
+                    <td scope="row"></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script>
+        function check ()
+        {
+ 
+            var naam = document.getElementById('name1').value;
+            document.getElementById('name2').innerHTML= naam;
+
+            var btc = document.getElementById('batch').value;
+            document.getElementById('batch2').innerHTML= btc;
+            
+            var id = document.getElementById('iden').value;
+            document.getElementById('id2').innerHTML= id;
+
+            var a = document.getElementById('n1').value;
+            var b = document.getElementById('n2').value;
+            var c = document.getElementById('n3').value;
+            var d = document.getElementById('n4').value;
+            var f = document.getElementById('n5').value;
+            var g = document.getElementById('n6').value;
+            var h = document.getElementById('n7').value;
+             
+            var tot="550";
+            document.getElementById('tot2').innerHTML= tot;
+
+            var obt =(a) -(-b)  - (-c) - (-d) - (-f) - (-g) - (-h) ;
+            document.getElementById('obt2').innerHTML= obt;
+
+            var per = (obt *100/550);
+            document.getElementById('per2').innerHTML= per;
+         
+
+             
+                 if (per>=80)  
+                 {
+                    document.getElementById('grade').innerText = ('A+');
+                }
+                else if (per>=70)
+                 {
+                    document.getElementById('grade').innerText = ('A');
+                 }
+                 else if(per>=60)
+                 {
+                    document.getElementById('grade').innerText = ('B');
+                 }
+                 else if(per>=50)
+                 {
+                    document.getElementById('grade').innerText = ('C');
+                 }
+                 else if(per>=33)
+                 {
+                    document.getElementById('grade').innerText = ('D');
+                 }
+                 else if(per<=32)
+                 {
+                    document.getElementById('grade').innerText = ('F');
+                 }
+
+                 if(n1<33 || n2<33 || n3<24 || n4<33 ||n5<18 ||n6<24 || n7<18)
+                 {
+                    document.getElementById('status').innerText = ('Fail');
+                 }
+                 else{
+                    document.getElementById('status').innerText = ('Pass');
+                 }
+        }
+    </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
