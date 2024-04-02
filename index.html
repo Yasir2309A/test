@@ -38,6 +38,180 @@
             </form>
         </div>
     </nav>
+    <style>
+        #container{
+            width: 100%;
+            height: 450px;
+            margin-top: 100px;
+            background-color: blueviolet;
+      }
+    </style>
+    <body>
+        <div id="container" class="container">
+            <form>
+              <div class="form-group">
+                  <label >Name</label>
+                  <input type="text"
+                    class="form-control"  id="name1" aria-describedby="helpId" placeholder="enter your name">
+                  </div>
+  
+                  <div class="form-group">
+                      <label >Batch</label>
+                      <input type="text"
+                        class="form-control" name="" id="batch1" aria-describedby="helpId" placeholder="enter your Batch">
+                      </div>
+  
+                      <div class="form-group">
+                          <label >Student ID</label>
+                          <input type="text"
+                            class="form-control" name="" id="stud1" aria-describedby="helpId" placeholder="enter your Student ID">
+                          </div>
+                          <hr>
+                          <label> English</label>
+                          <input type="text"  id="input1" >
+                          <label> urdu</label>
+                          <input type="text"   id="input2" >
+                          <label> Islamait</label>
+                          <input type="text"  id="input3" >
+                          <label> Math</label>
+                          <input type="text" id="input4"><br> <br>
+                          <label> Biology</label   >
+                          <input type="number" id="input5" >
+                          <label> Tolal Mark</label>
+                          <input type="text" id="TotalMark"><br><br>
+                          <a onclick="button ()" class="btn btn-primary" href="#" role="button">Generate Marksheet</a>
+            </form>
+            <br><br>
+            <div class="container">
+                <h4>Mark Sheet</h4>
+                
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>name</th>
+                            <th>batch </th>
+                            <th>Student id</th>
+                            <th>total Mark</th>
+                            <th>ob mark</th>
+                            <th>Percentage</th>
+                            <th>Grade</th>
+                            <th>status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td id="name2" scope="row"></td>
+                            <td id="batch2"></td>
+                            <td id="stud2"> </td>
+                            <td id="TotalMark2"></td>
+                            <td id="obmark"></td>
+                            <td id="per"></td>
+                            <td id="grade"></td>
+                            <td id="status"></td>
+                        </tr>
+                        <tr>
+                            <td scope="row"></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+  
+                
+            </div>
+            
+        </div>
+  
+  
+  
+        <script>
+  
+            
+            
+          function button (){
+  
+  
+            var input1 = document.getElementById('input1').value;
+            var input2 = document.getElementById('input2').value;
+            var input3 = document.getElementById('input3').value;
+            var input4 = document.getElementById('input4').value;
+            var input5 = document.getElementById('input5').value;
+            
+                           //  <--Name-->
+            var myVariable =   document.getElementById('name1').value ;     
+            document.getElementById('name2').innerHTML= myVariable;
+                           //  <--Batch-->
+            var myVariable1 =   document.getElementById('batch1').value;
+            document.getElementById('batch2').innerHTML= myVariable1;
+                          //  <--Studentid-->
+            var myVariable2 =   document.getElementById('stud1').value;
+            document.getElementById('stud2').innerHTML= myVariable2;
+                            //  <--Totalmark-->
+            var myVariable3 =   document.getElementById('TotalMark').value;
+            document.getElementById('TotalMark2').innerHTML= myVariable3;
+                            //  <--ob mark-->
+            var input1 = document.getElementById('input1').value;
+            var input2 = document.getElementById('input2').value;
+            var input3 = document.getElementById('input3').value;
+            var input4 = document.getElementById('input4').value;
+            var input5 = document.getElementById('input5').value;
+            var mark =(input1) -(-input2)  - (-input3) - (-input4) - (-input5) ;
+            document.getElementById('obmark').innerHTML= mark;
+  
+            var per = (mark*100)/myVariable3;
+            document.getElementById('per').innerHTML= per+('%');
+  
+  
+  
+            if(per<=40){
+            document.getElementById('grade').innerText = ('F');
+            }
+            else if(per<50){
+            document.getElementById('grade').innerText = ('D');
+            }
+            else if(per<60){
+            document.getElementById('grade').innerText = ('C');
+            }
+            else if(per<70){
+            document.getElementById('grade').innerText = ('B');
+            }
+            else if(per<80){
+            document.getElementById('grade').innerText = ('A');
+            }
+            else{
+            document.getElementById('grade').innerText = ('A+');
+            }
+        
+            if(input1<=33 || input2<=33 || input3<=33 || input4<=33 || input5<=33){
+            document.getElementById('status').innerText = ('Fail');
+            }
+            else{
+            document.getElementById('status').innerText = ('Pass');
+            }
+  
+  
+  
+            
+            
+            
+  
+  
+  
+            
+  
+          
+            
+            
+          }
+        
+  
+  
+             
+            
+  
+  
+  
+        </script>
       
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
